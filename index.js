@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const featureRoute = require('./src/route/featureRoute.js');
-const doctorRoute  = require('./src/route/doctorsRoute.js')
+const featureRoute = require('./src/Module/Features/featureRoute.js');
+const doctorRoute  = require('./src/Module//Doctors/doctorsRoute.js')
+const usersRoute  = require('./src/Module/Users/userRoute')
 const app = express();
 const port = 5000;
 
@@ -18,6 +19,7 @@ mongoose.connect('mongodb://localhost:27017/todos', {
 
 app.use('/bd-fertility', featureRoute); // Use the router directly
 app.use('/doctor-route', doctorRoute); // Use the router directly
+app.use('/user-route', usersRoute); // Use the router directly
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
