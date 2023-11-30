@@ -18,6 +18,10 @@ const userShchema = mongoose.Schema({
         type : String,
         require : String,
     },
+    role : {
+        type : String,
+       
+    },
 })
 
 userShchema.pre('save', async function(next){
@@ -25,6 +29,12 @@ userShchema.pre('save', async function(next){
     this.password = await bcrypt.hash(this.password, slat)
     next()
 })
+
+userShchema.post('save', function (doc, next) {
+    console.log(doc.password.trim() === '')
+   
+    next();
+});
 
 const Users = mongoose.model('User', userShchema)
 
