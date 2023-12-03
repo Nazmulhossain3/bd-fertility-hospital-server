@@ -35,7 +35,7 @@ const ourfacilitiesShcema = mongoose.Schema({
 
 // here is Facilities Gallery
 
-const FacilitiesGallery = mongoose.model('DoctorGallery', ourfacilitiesShcema)
+const FacilitiesGallery = mongoose.model('FacilitiesGallery', ourfacilitiesShcema)
 
 module.exports = {
     ServiceGallery,
