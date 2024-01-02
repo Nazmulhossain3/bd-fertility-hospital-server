@@ -30,11 +30,11 @@ userShchema.pre('save', async function(next){
     next()
 })
 
-userShchema.post('save', function (doc, next) {
-    console.log(doc.password.trim() === '')
+// userShchema.post('save', function (doc, next) {
+//     console.log(doc.password.trim() === '')
    
-    next();
-});
+//     next();
+// });
 
 const Users = mongoose.model('User', userShchema)
 
