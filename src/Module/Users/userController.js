@@ -154,6 +154,34 @@ const searchUsers = async (req, res) => {
   }
 };
 
+const checkIfAdmin = async (req, res) => {
+  try {
+    const email = req.params.email;
+
+    // Assuming you have defined your User model
+    const user = await Users.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
+    const result = { admin: user.role === "admin" };
+    
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+};
+
+
+
+
+
+
 module.exports = {
   createUser,
   logInUser,
@@ -163,4 +191,5 @@ module.exports = {
   makeUserToAdmin,
   makeAdminToUser,
   searchUsers,
+  checkIfAdmin
 };

@@ -11,7 +11,7 @@ const createServiceGallery = async(req,res)=>{
         const addServiceGallery = new ServiceGallery(req.body)
         await addServiceGallery.save()
         res.status(200).json({
-            message : "Succesfully added on Service Gallery"
+            message : "Successfully added on Service Gallery"
         })
     } catch (error) {
         res.status(500).json({
@@ -29,7 +29,7 @@ const getAllServiceGallery = async (req,res) => {
         })
         
     } catch (error) {
-        res.status(200).json({
+        res.status(500).json({
             error
         })
     }
@@ -41,10 +41,10 @@ const getAllServiceGallery = async (req,res) => {
 
 const createFacilities = async(req,res)=>{
     try {
-        const addNewFacilities = new FacilitiesGallery (req.body)
+        const addNewFacilities = new FacilitiesGallery(req.body)
         await addNewFacilities.save()
         res.status(200).json({
-            message : "Succesfully added on Service Gallery"
+            message : "Successfully added on Service Gallery"
         })
     } catch (error) {
         res.status(500).json({
@@ -62,7 +62,7 @@ const getAllFacilities = async(req,res)=> {
         })
         
     } catch (error) {
-        res.status(200).json({
+        res.status(500).json({
             error
         })
     }

@@ -25,7 +25,7 @@ const ourDoctorShcema = mongoose.Schema({
 const DoctorGallery = mongoose.model('DoctorGallery', ourDoctorShcema)
 
 
-const ourfacilitiesShcema = mongoose.Schema({
+const ourFacilitiesShcema = mongoose.Schema({
     img : {
         type : String,
         require : true
@@ -35,7 +35,7 @@ const ourfacilitiesShcema = mongoose.Schema({
 
 // here is Facilities Gallery
 
-const FacilitiesGallery = mongoose.model('FacilitiesGallery', ourfacilitiesShcema)
+const FacilitiesGallery = mongoose.model('FacilitiesGallery', ourFacilitiesShcema)
 
 module.exports = {
     ServiceGallery,
